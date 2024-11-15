@@ -76,19 +76,19 @@ if so i will use library to import a module which can help
 '''
 
 #                  Genres          Lang.           keywords? 
-users = {'User1': [[10,2,5,....], [45,5,0,0,0...], [39,8,9,2,5, 7,11,...]]}
+#users = {'User1': [[10,2,5,....], [45,5,0,0,0...], [39,8,9,2,5, 7,11,...]]}
 
 
 
 # create this new dataframe by appending our binary genre checker format      using .apply() to create a new column just like the weigthed rating 
           #             genres         language       keywords       metadata
-new_subset = top_movies[[1,0,1,0,0,1], [1,0,0,0...] , [1,2,3.,0,0], ['title', 'vote_count', 'vote_average', 'score],]
+#new_subset = top_movies[[1,0,1,0,0,1], [1,0,0,0...] , [1,2,3.,0,0], ['title', 'vote_count', 'vote_average', 'score],]
 
 
 
 
-distance of genres: ai = (100000 - number of genre for user)  e.g. action:26 representing 26 action movies inputted
- bi = number of genre for the movie ( 0 or 1)  -> cosine similarity
+#distance of genres: ai = (100000 - number of genre for user)  e.g. action:26 representing 26 action movies inputted
+# bi = number of genre for the movie ( 0 or 1)  -> cosine similarity
 
 
 
@@ -126,6 +126,48 @@ distance of genres: ai = (100000 - number of genre for user)  e.g. action:26 rep
 # print(cosine_sim_df)
 
 
+# Using Van Diagrams for finding movies in common
+
+def movieGenres(data, genre):
+    genres = data['genres'].apply(lambda x: ast.literal_eval(x))
+    movies=[]
+    i = 0
+    for movie , genre_list in zip(data['title'],genres):
+        if any(g['name'] == genre for g in genre_list):
+            movies += [movie]
+    return movies
+
+def similarGenres(data1, data2):
+    data = data1
+    if len(data1) > len(data2):
+        data = data2
+    final = []
+    for movie in data:
+        flag = 0
+        if movie in data1 and movie in data2:
+            flag = 1
+        if flag == 1:
+            final += [movie]
+    return final
+
+data1 = movieGenres(metadata,'Action')
+data2 = movieGenres(metadata,'Comedy')
+
+
+data3 = movieGenres(metadata, 'Drama')
+data4 = movieGenres(metadata,'Romance')
+
+data5 = similarGenres(data1, data2)
+
+data6 = similarGenres(data3, data4)
+
+data7 = similarGenres(data5, data6)
+
+print(data7)
+# SURPRISE ME! (using thumbsed up movies)
+# step -1
+# complete this
+# 
 
 
 
