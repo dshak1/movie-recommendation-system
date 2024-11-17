@@ -168,6 +168,36 @@ print(data7)
 # step -1
 # complete this
 # 
+### new ####
+def similarGenres2(Big_Data):
+    start_time = time.time()
+    length = len(Big_Data)
+    final = []
+    minData = Big_Data[0]
+    for movie in minData:
+        flag = 0
+        for genre in Big_Data:
+            if movie in genre :
+                flag += 1
+        if flag == length:
+            final += [movie]
+    endtime = time.time()
+    print(endtime - start_time)
+    return final
+# similargenres 2 take more time to compile
+# # the structure is therebut needs to be better  
+data9 = similarGenres2(data8)
+#if data9 == data7:
+  #  print(1)
+
+# lets assume our users data contains moviesand they are organised based of ratings 
+def sameGenre(target_movie, data):
+    inCommon = 0
+    genres = data['genres'].apply(lambda x: ast.literal_eval(x))
+    main = target_movie['genres'].apply(lambda x: ast.literal_eval(x))
+    for movies, genre in zip(data['movies'],genres):
+    return 1
+print(sameGenre('hi',top_movies))
 
 
 
