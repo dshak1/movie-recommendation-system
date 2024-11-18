@@ -196,7 +196,7 @@ def sameGenre(target_movie, data):
     genres = data['genres'].apply(lambda x: ast.literal_eval(x))
     main = target_movie['genres'].apply(lambda x: ast.literal_eval(x))
     for movies, genre in zip(data['movies'],genres):
-    return 1
+    return 1;
 print(sameGenre('hi',top_movies))
 
 
