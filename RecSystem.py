@@ -128,127 +128,148 @@ if so i will use library to import a module which can help
 
 # Using Van Diagrams for finding movies in common
 
-def movieGenres(data, genre):
-    genres = data['genres'].apply(lambda x: ast.literal_eval(x))
-    movies=[]
-   # i = 0
-    for movie , genre_list in zip(data['title'],genres):
-        if any(g['name'] == genre for g in genre_list):
-            movies += [movie]
-    return movies
+# def movieGenres(data, genre):
+#     genres = data['genres'].apply(lambda x: ast.literal_eval(x))
+#     movies=[]
+#    # i = 0
+#     for movie , genre_list in zip(data['title'],genres):
+#         if any(g['name'] == genre for g in genre_list):
+#             movies += [movie]
+#     return movies
 
-def similarGenres(data1, data2): #find movies found in lists data1 and data2
-    data = data1
-    if len(data1) > len(data2):
-        data = data2
-    final = []
-    for movie in data:
-        flag = 0
-        if movie in data1 and movie in data2:
-            flag = 1
-        if flag == 1:
-            final += [movie]
+# def similarGenres(data1, data2): #find movies found in lists data1 and data2
+#     data = data1
+#     if len(data1) > len(data2):
+#         data = data2
+#     final = []
+#     for movie in data:
+#         flag = 0
+#         if movie in data1 and movie in data2:
+#             flag = 1
+#         if flag == 1:
+#             final += [movie]
 
-    # for movie in data:
-    #     flag = 0
-    #     if movie in data1 and movie in data2:
-    #         final += [movie]
+#     # for movie in data:
+#     #     flag = 0
+#     #     if movie in data1 and movie in data2:
+#     #         final += [movie]
 
-    return final
+#     return final
 
-data1 = movieGenres(metadata,'Action') # returns a list "movies" with action as one of the genres
-data2 = movieGenres(metadata,'Comedy') # returns a list "movies" with comedy as one of the genres
-
-
-data3 = movieGenres(metadata, 'Drama') # returns a list "movies" with drama as one of the genres
-data4 = movieGenres(metadata,'Romance') # returns a list "movies" with romance as one of the genres
-
-data5 = similarGenres(data1, data2)
-
-data6 = similarGenres(data3, data4)
-
-data7 = similarGenres(data5, data6)
-
-print(data7)
+# data1 = movieGenres(metadata,'Action') # returns a list "movies" with action as one of the genres
+# data2 = movieGenres(metadata,'Comedy') # returns a list "movies" with comedy as one of the genres
 
 
+# data3 = movieGenres(metadata, 'Drama') # returns a list "movies" with drama as one of the genres
+# data4 = movieGenres(metadata,'Romance') # returns a list "movies" with romance as one of the genres
 
-# SURPRISE ME! (using thumbsed up movies)
-# step -1
-# complete this
-liked_movies = ["The Matrix", "Inception", "The Dark Knight"]
-def surpriseMe(likedMovies[]):
-    # Take user's previously liked movies and use genre info to give
-    # something similar but less obvious. 
-    """iterate through the last 20 liked movies and add scores for each genre
-    (+1 for every genre tag)
-    """
-    genres = {
-        "Action": 0,
-        "Comedy": 0,
-        "Drama": 0,
-        "Horror": 0,
-        "Romance": 0,
-        "Sci-Fi": 0,
-        "Fantasy": 0,
-        "Thriller": 0,
-        "Documentary": 0,
-        "Animation": 0
-    }
+# data5 = similarGenres(data1, data2)
 
-    # if certain actor/genre/director shows up more than x,y,z times,
-    # add related movies from the top 10% rated pile
-    # humans go through phases rather than perfectly interleaving
-    # their genre picks so give priority to recently watched
-    # ensure movie is not in liked movies to not give duplicates
-    #diversification function
+# data6 = similarGenres(data3, data4)
+
+# data7 = similarGenres(data5, data6)
+
+# print(data7)
 
 
 
-    #topxgenre function get the x most watched genres out of last y movies
+# # SURPRISE ME! (using thumbsed up movies)
+# # step -1
+# # complete this
+# liked_movies = ["The Matrix", "Inception", "The Dark Knight"]
+# def surpriseMe(likedMovies[]):
+#     # Take user's previously liked movies and use genre info to give
+#     # something similar but less obvious. 
+#     """iterate through the last 20 liked movies and add scores for each genre
+#     (+1 for every genre tag)
+#     """
+#     genres = {
+#         "Action": 0,
+#         "Comedy": 0,
+#         "Drama": 0,
+#         "Horror": 0,
+#         "Romance": 0,
+#         "Sci-Fi": 0,
+#         "Fantasy": 0,
+#         "Thriller": 0,
+#         "Documentary": 0,
+#         "Animation": 0
+#     }
 
-    for movie in liked_movies[-20:]: #assuming the liked movies are in oldest to newest
+#     # if certain actor/genre/director shows up more than x,y,z times,
+#     # add related movies from the top 10% rated pile
+#     # humans go through phases rather than perfectly interleaving
+#     # their genre picks so give priority to recently watched
+#     # ensure movie is not in liked movies to not give duplicates
+#     #diversification function
+
+
+
+#     #topxgenre function get the x most watched genres out of last y movies
+
+#     top3genres = find_top_genres(liked_movies[-20:])
+   
+#     recommendations = []
+
         
-        # Iterate through the last 20 liked movies (assuming oldest to newest)
-        for movie in likedMovies[-20:]:
-            # Check each genre tag in the movie
-            for genre in movie['genres']:
-                # Skip if user already liked this movie
-
-
-                if movie in liked_movies:
-                    continue
-                if genre in genres:  # Increment the score if the genre is valid
-                    genres[genre] += 1
-        
-        # for the 3 most watched genres out of 20 
-        recommendation = get_movie_genres(movie)
+#     # for the 3 most watched genres out of 20 
+#     recommendation = get_movie_genres(movie)
         
       
             
-        # Stop once we have enough recommendations
-        if len(recommendations) >= num_recommendations:
-            break
+#     # Stop once we have enough recommendations
+#     if len(recommendations) >= num_recommendations:
+#         break
     
-    return recommendations
+#     return recommendations
 
 
 
    
-     # Each user has a dictionary of genre scores based on their last 20 watched movies
-    # dictionary score for all liked movies
-    # each user has a last of all liked movies
+#      # Each user has a dictionary of genre scores based on their last 20 watched movies
+#     # dictionary score for all liked movies
+#     # each user has a last of all liked movies
 
-    # 10 surprise recommendations
-    # top 3 genres from last 20 liked
-    # 2 intersection of all 3 most watched
-    # 2 from non related genres
-
-
+#     # 10 surprise recommendations
+#     # top 3 genres from last 20 liked
+#     # 2 intersection of all 3 most watched
+#     # 2 from non related genres
 
 
 
 
+# def find_top_genres(liked_movies: List[Dict[str, Any]], num_top_genres: int = 3) -> List[str]:
+#        genres = {}
+    
+#     # Count genre appearances 
+#     for movie in liked_movies:
+#         if 'genres' in movie:
+#             for genre in movie['genres']:
+#                 genres[genre] = genres.get(genre, 0) + 1
+    
+
+
+
+
+# class user:
+#     def __init__(self):
+#         self.liked_movies = []
+#         self.top_genres = []
+        
+#     # LastTwentyLikedMovies = []
+#     # genre1 = "" 
+#     # genre2 = ""
+#     # genre3 = ""
+
+
+
+
+
+# # HASH TABLE:
+# #     name, country, top genres (3 most watched genres which would need to be recalculated), the number of movies they wacthed in each genre)
+# #disliked movies list
+
+# # Show stats for user like your most wacthed genres, hours spent per month, 
 
 
 
@@ -270,36 +291,37 @@ def surpriseMe(likedMovies[]):
 
 
 
-### new ####
-def similarGenres2(Big_Data):
-    start_time = time.time()
-    length = len(Big_Data)
-    final = []
-    minData = Big_Data[0]
-    for movie in minData:
-        flag = 0
-        for genre in Big_Data:
-            if movie in genre :
-                flag += 1
-        if flag == length:
-            final += [movie]
-    endtime = time.time()
-    print(endtime - start_time)
-    return final
-# similargenres 2 take more time to compile
-# # the structure is therebut needs to be better  
-data9 = similarGenres2(data8)
-if data9 == data7:
-   print(1)
 
-lets assume our users data contains moviesand they are organised based of ratings 
-def sameGenre(target_movie, data):
-    inCommon = 0
-    genres = data['genres'].apply(lambda x: ast.literal_eval(x))
-    main = target_movie['genres'].apply(lambda x: ast.literal_eval(x))
-    for movies, genre in zip(data['movies'],genres):
-    return 1
-print(sameGenre('hi',top_movies))
+# ### new ####
+# def similarGenres2(Big_Data):
+#     start_time = time.time()
+#     length = len(Big_Data)
+#     final = []
+#     minData = Big_Data[0]
+#     for movie in minData:
+#         flag = 0
+#         for genre in Big_Data:
+#             if movie in genre :
+#                 flag += 1
+#         if flag == length:
+#             final += [movie]
+#     endtime = time.time()
+#     print(endtime - start_time)
+#     return final
+# # similargenres 2 take more time to compile
+# # # the structure is therebut needs to be better  
+# data9 = similarGenres2(data8)
+# if data9 == data7:
+#    print(1)
+
+# # lets assume our users data contains moviesand they are organised based of ratings 
+# def sameGenre(target_movie, data):
+#     inCommon = 0
+#     genres = data['genres'].apply(lambda x: ast.literal_eval(x))
+#     main = target_movie['genres'].apply(lambda x: ast.literal_eval(x))
+#     for movies, genre in zip(data['movies'],genres):
+#     return 1
+# print(sameGenre('hi',top_movies))
 
 
 
