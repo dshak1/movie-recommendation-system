@@ -323,6 +323,97 @@ if so i will use library to import a module which can help
 #     return 1
 # print(sameGenre('hi',top_movies))
 
+def movieGenres(data, genre):
+    genres = data['genres'].apply(lambda x: ast.literal_eval(x))
+    movies=[]
+    i = 0
+    for movie , genre_list in zip(data['title'],genres):
+        if any(g['name'] == genre for g in genre_list):
+            movies += [movie]
+    return movies
 
+
+# if 
+def similarGenres2(Big_Data):
+    start_time = time.time()
+    length = len(Big_Data)
+    final = []
+    minData = Big_Data[0]
+    for movie in minData:
+        flag = 0
+        for genre in Big_Data:
+            if movie in genre :
+                flag += 1
+        if flag == length:
+            final += [movie]
+    final2 = []
+    if (len(final) < main_length) and (length > 2):
+        Big_Data.pop()
+        final2 = similarGenres2(Big_Data)
+        howManyMore = main_length - len(final)
+        for i in range (howManyMore):
+            final += [final2[i]]
+    endtime = time.time()
+    print(endtime - start_time)
+    return final
+
+# similargenres 2 take more time to compile
+# Limit the selection to 4
+# Have a function for k< n
+# call it 4 times (len(big_data times), basiclly how many genres)
+
+data1 = movieGenres(top_movies,'Action')
+data2 = movieGenres(top_movies,'Comedy')
+data3 = movieGenres(top_movies, 'Drama')
+data4 = movieGenres(top_movies,'Romance')
+
+data8 = [data1,data2,data3,data4]  
+
+data9 = similarGenres2(data8)
+
+print(data9)
+
+## *** SURPRISE ME !!!!!!!! *** ##
+# Adding new User to our dataset 
+def newUserAdd():
+    Name = input("Enter the name of the user: ")
+    allMovies = []
+    Last20 = []
+    genresWatched = {
+        'Action': 0,
+        'Drama': 0,
+        'Comedy': 0,
+        'Romance': 0
+    }
+    Last20Genres = {
+        'Action': 0,
+        'Drama': 0,
+        'Comedy': 0,
+        'Romance': 0
+    }
+
+    data = [
+        ["All Movies", "Last 20 liked", "Genre Score", "Liked Genres"],
+        [allMovies, Last20, str(genresWatched), str(Last20Genres)]
+    ]
+
+    file_path = f"Users/{Name}.xlsx"  
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    df = pd.DataFrame(data[1:], columns=data[0])
+    df.to_excel(file_path, index=False)
+
+    wb = load_workbook(file_path)
+    ws = wb.active
+
+    ws.column_dimensions['A'].width = 30
+    ws.column_dimensions['B'].width = 30
+    ws.column_dimensions['C'].width = 50  
+    ws.column_dimensions['D'].width = 50  
+
+
+    wb.save(file_path)
+
+newUserAdd()
 
 
