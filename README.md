@@ -1,13 +1,5 @@
 # 🎬 Movie Recommendation System
 
-```
-   __  __            _        _____                          _   _____           _           _
-  |  \/  |          (_)      |  __ \                        | | |  __ \         (_)         | |
-  | \  / | _____   ___  ___  | |__) |___ _ __ ___   ___ _ __ | |_| |__) |___  ___ _ __ ___ | |__   ___ _ __
-  | |\/| |/ _ \ \ / / |/ _ \ |  _  // _ \ '_ ` _ \ / _ \ '_ \| __|  _  // _ \| | '_ ` _ \| '_ \ / _ \ '__|
-  | |  | | (_) \ V /| |  __/ | | \ \  __/ | | | | |  __/ | | | |_| | \ \ (_) | | | | | | | |_) |  __/ |
-  |_|  |_|\___/ \_/ |_|\___| |_|  \_\___|_| |_| |_|\___|_| |_|\__|_|  \_\___/|_|_| |_| |_|_.__/ \___|_|
-```
 
 A sophisticated movie recommendation system built with Python that provides personalized movie suggestions based on content-based filtering using TF-IDF and cosine similarity.
 
