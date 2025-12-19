@@ -9,6 +9,11 @@
   |_|  |_|\___/ \_/ |_|\___| |_|  \_\___|_| |_| |_|\___|_| |_|\__|_|  \_\___/|_|_| |_| |_|_.__/ \___|_|
 ```
 
+![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)
+![Pandas](https://img.shields.io/badge/Pandas-1.0+-orange.svg)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-0.24+-red.svg)
+![OpenPyXL](https://img.shields.io/badge/OpenPyXL-3.0+-green.svg)
+
 A sophisticated movie recommendation system built with Python that provides personalized movie suggestions based on content-based filtering using TF-IDF and cosine similarity.
 
 ## 🚀 Features
