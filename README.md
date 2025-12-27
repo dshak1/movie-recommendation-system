@@ -6,8 +6,7 @@
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-0.24+-red.svg)
 ![OpenPyXL](https://img.shields.io/badge/OpenPyXL-3.0+-green.svg)
 
-![Algorithm Visualizer Demo](./public/movie
-.png)
+![Algorithm Visualizer Demo](movie.png)
 
 A sophisticated movie recommendation system built with Python that provides personalized movie suggestions based on content-based filtering using TF-IDF and cosine similarity.
 
