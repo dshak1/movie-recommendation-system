@@ -1,4 +1,4 @@
-# 🎬 Movie Recommendation System
+# Movie Recommendation System
 
 
 ![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)
