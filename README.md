@@ -8,14 +8,14 @@
 
 A sophisticated movie recommendation system built with Python that provides personalized movie suggestions based on content-based filtering using TF-IDF and cosine similarity.
 
-## 🚀 Features
+Features
 
 - **Weighted Rating System**: Implements IMDB's weighted rating formula for accurate movie scoring
 - **Content-Based Filtering**: Uses TF-IDF vectorization and cosine similarity for recommendations
 - **Genre Matching**: Analyzes movie genres to find similar films
 - **Top Movies Ranking**: Displays top-rated movies based on vote counts and averages
 
-## 🛠️ Tech Stack
+Tech Stack
 
 - **Language**: Python 3.x
 - **Data Processing**: Pandas
@@ -23,12 +23,12 @@ A sophisticated movie recommendation system built with Python that provides pers
 - **Data Handling**: OpenPyXL (for Excel operations in tests)
 - **Dataset**: Movie metadata CSV (movies_metadata.csv)
 
-## 📋 Prerequisites
+Prerequisites
 
 - Python 3.7+
 - Required packages: pandas, scikit-learn, openpyxl
 
-## 🔧 Installation
+installation
 
 1. Clone the repository:
    ```bash
@@ -43,7 +43,7 @@ A sophisticated movie recommendation system built with Python that provides pers
 
 3. Ensure you have the movie dataset (`movies_metadata.csv`) in the project directory.
 
-## 🎯 Usage
+Usage
 
 Run the main recommendation system:
 ```bash
@@ -56,17 +56,3 @@ This will:
 - Display top 20 movies based on the scoring system
 - Prepare for content-based recommendations (TF-IDF and cosine similarity)
 
-## 📁 Project Structure
-
-- `RecSystem.py` - Main recommendation system implementation
-- `hashTableCacheTEST.py` - Test file for caching mechanisms
-- `README.md` - Project documentation
-- `movie-recommender.zip` - Archived project files
-
-## 🤝 Contributing
-
-Feel free to fork this project and submit pull requests with improvements!
-
-## 📄 License
-
-This project is open source. Please check the license file for details.
