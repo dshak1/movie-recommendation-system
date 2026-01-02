@@ -373,7 +373,7 @@ data9 = similarGenres2(data8)
 
 print(data9)
 
-## *** SURPRISE ME !!!!!!!! *** ##
+## * SURPRISE ME !!!!!!!! * ##
 # Adding new User to our dataset 
 def newUserAdd():
     Name = input("Enter the name of the user: ")

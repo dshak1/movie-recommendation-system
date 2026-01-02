@@ -10,18 +10,18 @@ A sophisticated movie recommendation system built with Python that provides pers
 
 Features
 
-- **Weighted Rating System**: Implements IMDB's weighted rating formula for accurate movie scoring
-- **Content-Based Filtering**: Uses TF-IDF vectorization and cosine similarity for recommendations
-- **Genre Matching**: Analyzes movie genres to find similar films
-- **Top Movies Ranking**: Displays top-rated movies based on vote counts and averages
+- Weighted Rating System: Implements IMDB's weighted rating formula for accurate movie scoring
+- Content-Based Filtering: Uses TF-IDF vectorization and cosine similarity for recommendations
+- genre Matching: Analyzes movie genres to find similar films
+- Top Movies Ranking: Displays top-rated movies based on vote counts and averages
 
 Tech Stack
 
-- **Language**: Python 3.x
-- **Data Processing**: Pandas
-- **Machine Learning**: Scikit-learn (cosine similarity, TF-IDF)
-- **Data Handling**: OpenPyXL (for Excel operations in tests)
-- **Dataset**: Movie metadata CSV (movies_metadata.csv)
+- Language: Python 3.x
+- Data Processing: Pandas
+- Machine Learning: Scikit-learn (cosine similarity, TF-IDF)
+- Data Handling: OpenPyXL (for Excel operations in tests)
+- Dataset: Movie metadata CSV (movies_metadata.csv)
 
 Prerequisites
 
