@@ -6,6 +6,8 @@
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-0.24+-red.svg)
 ![OpenPyXL](https://img.shields.io/badge/OpenPyXL-3.0+-green.svg)
 
+![Algorithm Visualizer Demo](movie.png)
+
 A sophisticated movie recommendation system built with Python that provides personalized movie suggestions based on content-based filtering using TF-IDF and cosine similarity.
 
 Features
@@ -31,24 +33,18 @@ Prerequisites
 installation
 
 1. Clone the repository:
-   ```bash
    git clone https://github.com/dshak1/movie-recommendation-system.git
    cd movie-recommendation-system
-   ```
 
 2. Install dependencies:
-   ```bash
    pip install pandas scikit-learn openpyxl
-   ```
 
 3. Ensure you have the movie dataset (`movies_metadata.csv`) in the project directory.
 
 Usage
 
 Run the main recommendation system:
-```bash
 python RecSystem.py
-```
 
 This will:
 - Load and process movie metadata
